@@ -8,15 +8,15 @@ This repository packages two projects, each with its own git history and GitHub 
 
 | Folder | What it is | Stack | Remote |
 |---|---|---|---|
-| [`carrolina-FE/`](carrolina-FE) | Lisbon Passenger Flow Explorer (web app) | React 19, Vite, Tailwind CSS, Leaflet, Recharts, h3-js | [Nova-Sefik/carrolina-FE](https://github.com/Nova-Sefik/carrolina-FE) |
+| [`carrolinha-FE/`](carrolinha-FE) | Lisbon Passenger Flow Explorer (web app) | React 19, Vite, Tailwind CSS, Leaflet, Recharts, h3-js | [Nova-Sefik/carrolina-FE](https://github.com/Nova-Sefik/carrolina-FE) |
 | [`carrolinha-BE/`](carrolinha-BE) | Carrolinha API: data aggregates and the AI planner | Python 3.13, FastAPI, DuckDB, H3, OpenAI | [Nova-Sefik/carrolinha-BE](https://github.com/Nova-Sefik/carrolinha-BE) |
 
-The two folders are recorded as gitlinks, but there is no `.gitmodules` file, so `git clone --recursive` will not fetch them. Clone each one from its remote into the matching folder instead.
+Both are git submodules. Clone with `git clone --recursive`, or run `git submodule update --init` in an existing clone.
 
 ## How it fits together
 
 ```
-Browser (carrolina-FE, :5173)
+Browser (carrolinha-FE, :5173)
    │  GET  /api/meta, /api/hex, /api/stops, /api/transfers, /api/journey-traffic, …
    │  POST /api/planner, /api/tools/{name}
    ▼
@@ -39,7 +39,7 @@ The backend computes every number. The frontend only formats and draws what the 
 - **Stop detail and week overview** (`#/overview`).
 - **AI planning workspace** (`#/assistant`): preset graphs, filters and a chat-driven planner.
 
-For more detail, see [`carrolina-FE/README.md`](carrolina-FE/README.md). The API contracts are in [`carrolina-FE/docs/`](carrolina-FE/docs).
+For more detail, see [`carrolinha-FE/README.md`](carrolinha-FE/README.md). The API contracts are in [`carrolinha-FE/docs/`](carrolinha-FE/docs).
 
 ## Getting started
 
@@ -50,6 +50,22 @@ Requirements: Node.js with npm, Python 3.13, and [uv](https://docs.astral.sh/uv/
 > ```bash
 > git -C carrolinha-BE fetch && git -C carrolinha-BE checkout feature/journey-traffic
 > ```
+
+### Quick start: both at once
+
+```bash
+./dev.sh
+```
+
+`dev.sh` starts the backend, waits until `/api/health` responds, then starts the frontend pointed at it. Ctrl+C stops both.
+
+- **Ports:** it uses the first free port at or above 8000 for the backend and 5173 for the frontend. Set `BE_PORT` or `FE_PORT` to start from a different port (for example `BE_PORT=9000 ./dev.sh`).
+- **Frontend env:** it sets `VITE_API_URL` and `VITE_AI_ENDPOINT` to the port the backend actually got. These override whatever is in `carrolinha-FE/.env`, such as the Render URL.
+- **Backend env:** it adds the frontend's origin to `CARROLINHA_ALLOWED_ORIGINS`, keeping any value you set, so the planner accepts requests from it. If `OPENAI_API_KEY` or `OPENAI_MODEL` is not in your shell or in `carrolinha-BE/.env`, it takes them from `carrolinha-FE/.env`.
+- **Warnings:** it tells you when the backend checkout has no `/api/planner`.
+- **First run:** it installs frontend dependencies if they're missing. `uv` syncs the backend automatically.
+
+To start each side by hand instead, follow the two steps below.
 
 ### 1. Backend
 
@@ -78,7 +94,7 @@ Without it, `/api/journey-traffic` returns `503`.
 ### 2. Frontend
 
 ```bash
-cd carrolina-FE
+cd carrolinha-FE
 cp .env.example .env                      # VITE_API_URL=http://localhost:8000
 npm install
 npm run dev                               # http://localhost:5173
@@ -100,7 +116,7 @@ Backend environment variables (set them in `carrolinha-BE/.env` locally, or in t
 | `CARROLINHA_ALLOWED_ORIGINS` | `localhost` and `127.0.0.1` on ports 5173 and 5174 | Frontend origins allowed to call `/api/planner` |
 | `CARROLINHA_PLANNER_PER_MINUTE` / `_PER_DAY` | `8` / `300` | Planner rate limits |
 
-Frontend environment variables (`carrolina-FE/.env`):
+Frontend environment variables (`carrolinha-FE/.env`):
 
 | Variable | Default | Purpose |
 |---|---|---|
@@ -125,7 +141,7 @@ The backend includes a Render Blueprint (`carrolinha-BE/render.yaml`). In Render
 
 ```bash
 cd carrolinha-BE && uv run python -m unittest tests.test_journeys tests.test_golden
-cd carrolina-FE  && npm run lint && npm run build
+cd carrolinha-FE  && npm run lint && npm run build
 ```
 
 `carrolinha-BE/tests/test_api.py` was written for the old mock data and needs a new fixture before it will pass.
