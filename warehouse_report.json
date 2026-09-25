@@ -1,0 +1,430 @@
+{
+  "taps": {
+    "csv_rows": 10929425,
+    "entry_exit_rows": 10929425,
+    "duplicate_ids": 0,
+    "double_taps_removed": 60318,
+    "kept": 10869107,
+    "entries_outside_05_to_01": 27910,
+    "by_operator": {
+      "cm": {
+        "entries": 3517932,
+        "exits": 0,
+        "with_trip_id": 3517932
+      },
+      "metro": {
+        "entries": 2329064,
+        "exits": 2648208,
+        "with_trip_id": 0
+      },
+      "carris": {
+        "entries": 2129490,
+        "exits": 0,
+        "with_trip_id": 0
+      },
+      "other": {
+        "entries": 169373,
+        "exits": 0,
+        "with_trip_id": 169099
+      },
+      "ferry": {
+        "entries": 66039,
+        "exits": 0,
+        "with_trip_id": 0
+      },
+      "rail": {
+        "entries": 6911,
+        "exits": 2090,
+        "with_trip_id": 0
+      }
+    },
+    "segments": {
+      "senior": 1096131,
+      "regular": 7084993,
+      "sub23": 37685
+    }
+  },
+  "stops": {
+    "taps_with_stop": 10869107,
+    "taps_locatable": 10868165,
+    "share_locatable": 0.9999133323464384,
+    "coordinate_sources": {
+      "plans API": 13981
+    },
+    "taps_without_coordinates_by_operator": {
+      "other": 274,
+      "carris": 668
+    },
+    "hubs": 9551,
+    "multi_operator_hubs": 136,
+    "plans_used": [
+      "carris: Carris 20260715..20261231 (plans API)",
+      "rail: Fertagus 20260702..20261231 (plans API)",
+      "other: Metro Transportes do Sul 20240101..20300101 (plans API)",
+      "metro: Metropolitano de Lisboa 20260101..20261231 (plans API)",
+      "other: MobiCascais 20260608..20260913 (plans API)",
+      "rail: Comboios de Portugal 20260616..20261231 (plans API)",
+      "ferry: Transtejo Soflusa 20260711..20270701 (plans API)",
+      "cm: Viação Alvorada 20260803..20260913 (plans API)",
+      "cm: Rodoviária de Lisboa 20260803..20260831 (plans API)",
+      "cm: Rodoviária de Lisboa 20260901..20260913 (plans API)",
+      "cm: Transportes Sul do Tejo 20260803..20260913 (plans API)",
+      "cm: Alsa Todi 20260801..20260913 (plans API)",
+      "other: Transportes Colectivos do Barreiro 20260608..20261231 (plans API)"
+    ]
+  },
+  "stop_hour": {
+    "rows": 996607,
+    "boardings_on_map": 8189957.0,
+    "boardings_per_day": {
+      "2026-08-31": 1297458,
+      "2026-09-01": 1315435,
+      "2026-09-02": 1390907,
+      "2026-09-03": 1384945,
+      "2026-09-04": 1372087,
+      "2026-09-05": 795752,
+      "2026-09-06": 633373
+    }
+  },
+  "anomalies": {
+    "alerts": 40,
+    "top": [
+      [
+        "2026-08-31",
+        22,
+        "Alto dos Moinhos",
+        2070.0,
+        80.0,
+        2487.5,
+        100.33
+      ],
+      [
+        "2026-09-05",
+        23,
+        "Olivais",
+        633.0,
+        80.0,
+        691.3,
+        28.51
+      ],
+      [
+        "2026-09-05",
+        22,
+        "Campo Grande",
+        3882.0,
+        537.0,
+        622.9,
+        21.62
+      ],
+      [
+        "2026-08-31",
+        22,
+        "Colégio Militar/Luz",
+        2636.0,
+        860.5,
+        206.3,
+        18.79
+      ],
+      [
+        "2026-09-05",
+        24,
+        "Casal da Mira (Centro Comercial)",
+        217.0,
+        47.0,
+        361.7,
+        15.34
+      ]
+    ]
+  },
+  "transfers": {
+    "transfers_week": 988645,
+    "dropped_missing_leg": 147444,
+    "share_with_observed_arrival": 0.37408049909112623,
+    "top_hubs_week": [
+      [
+        "Campo Grande",
+        148133
+      ],
+      [
+        "Oriente",
+        66573
+      ],
+      [
+        "Pontinha",
+        63313
+      ],
+      [
+        "Cais do Sodré",
+        54599
+      ],
+      [
+        "Odivelas",
+        52823
+      ]
+    ],
+    "journeys_with_transfer": 559845
+  },
+  "scheduled_arrivals": {
+    "legs": 1241857,
+    "transfers_timed_by_schedule": 23558
+  },
+  "lines": {
+    "scheduled_trip_runs": 122998,
+    "candidates": [
+      "1232",
+      "1228",
+      "1236",
+      "1639",
+      "3009",
+      "1625",
+      "1504",
+      "1620",
+      "1718",
+      "1234",
+      "1623",
+      "1204",
+      "1229",
+      "1011",
+      "1215",
+      "1721",
+      "1510",
+      "1005",
+      "1629",
+      "1205",
+      "1223",
+      "1513",
+      "1203",
+      "1613"
+    ],
+    "published": [
+      [
+        "1011",
+        1.644712121212121
+      ],
+      [
+        "1623",
+        1.58
+      ],
+      [
+        "1629",
+        1.3763636363636362
+      ],
+      [
+        "1620",
+        1.015
+      ],
+      [
+        "1223",
+        0.9712941176470588
+      ],
+      [
+        "1234",
+        0.8779591836734695
+      ],
+      [
+        "1504",
+        0.8666666666666666
+      ],
+      [
+        "1228",
+        0.8414900264359528
+      ],
+      [
+        "1510",
+        0.7925851254480287
+      ],
+      [
+        "1229",
+        0.6875
+      ],
+      [
+        "1639",
+        0.6659399631058194
+      ],
+      [
+        "3009",
+        0.626475855750467
+      ]
+    ],
+    "alightings_resolved_share": 0.7591187219379764,
+    "capacity_sources": {
+      "blocks.txt via trips.block_id": 2730
+    }
+  },
+  "published": {
+    "dim_stop": 9551,
+    "fact_stop_hour": 996607,
+    "dim_line": 12,
+    "fact_line_hour": 1277,
+    "fact_transfer": 8218,
+    "fact_transfer_hour": 44073,
+    "fact_flow": 420,
+    "fact_anomaly": 40,
+    "golden_route": 14,
+    "golden_meta": 12
+  },
+  "golden": {
+    "area_pairs": 14535,
+    "candidates": 39,
+    "published": [
+      [
+        "g1",
+        "campo-grande",
+        "galinheiras",
+        468.0,
+        18.0,
+        "viable"
+      ],
+      [
+        "g2",
+        "oriente",
+        "galinheiras",
+        245.2,
+        20.6,
+        "weak"
+      ],
+      [
+        "g3",
+        "laranjeiro-av-23-julho-oasis",
+        "rossio",
+        204.0,
+        16.8,
+        "weak"
+      ],
+      [
+        "g4",
+        "calvario",
+        "colegio-militar-luz",
+        247.0,
+        10.7,
+        "weak"
+      ],
+      [
+        "g5",
+        "alfornelos",
+        "lumiar",
+        130.6,
+        18.4,
+        "weak"
+      ],
+      [
+        "g6",
+        "mosteiro-jeronimos",
+        "areeiro",
+        143.6,
+        16.1,
+        "weak"
+      ],
+      [
+        "g7",
+        "linda-a-velha",
+        "alfornelos",
+        126.6,
+        17.9,
+        "weak"
+      ],
+      [
+        "g8",
+        "mosteiro-jeronimos",
+        "pragal",
+        101.8,
+        18.8,
+        "weak"
+      ],
+      [
+        "g9",
+        "areeiro",
+        "pontinha",
+        170.6,
+        10.7,
+        "weak"
+      ],
+      [
+        "g10",
+        "cacilhas",
+        "marques-de-pombal",
+        106.8,
+        15.3,
+        "weak"
+      ],
+      [
+        "g11",
+        "mosteiro-jeronimos",
+        "odivelas",
+        110.4,
+        14.6,
+        "weak"
+      ],
+      [
+        "g12",
+        "costa-caparica-torre-das-argolas-ter",
+        "rossio",
+        106.6,
+        15.0,
+        "weak"
+      ],
+      [
+        "g13",
+        "colegio-militar-luz",
+        "casal-da-mira-centro-comercial",
+        160.4,
+        9.5,
+        "weak"
+      ],
+      [
+        "g14",
+        "odivelas",
+        "r-salvador-allende-44",
+        93.6,
+        13.1,
+        "weak"
+      ]
+    ]
+  },
+  "assumptions": {
+    "OP_NAME": {
+      "metro": "Metro",
+      "carris": "Carris",
+      "cm": "Carris Metropolitana",
+      "rail": "Rail (CP, Fertagus)",
+      "ferry": "Ferries (Soflusa)",
+      "other": "Other operators"
+    },
+    "DOUBLE_TAP_SECONDS": 120,
+    "TRANSFER_WINDOW_MIN": 60,
+    "JOURNEY_GAP_MIN": 60,
+    "HUB_STATION_RADIUS_M": 400,
+    "HUB_BUS_TO_STATION_M": 250,
+    "HUB_BUS_TOUCH_M": 60,
+    "HUB_SAME_NAME_M": 150,
+    "HUB_MAX_SPAN_M": 600,
+    "ANOMALY_Z": 3.5,
+    "ANOMALY_MIN_EXPECTED": 25,
+    "ANOMALY_MIN_EXCESS": 50,
+    "ANOMALY_MIN_DEV": 0.25,
+    "ANOMALY_MAX_ALERTS": 40,
+    "ALIGHT_MAX_DIST_M": 1000,
+    "N_LINES": 12,
+    "WHATIF_MAX_MOVES": 4,
+    "GOLDEN_ZONE_RES": 7,
+    "GOLDEN_MIN_KM": 3.0,
+    "GOLDEN_MIN_MULTI_PER_DAY": 20,
+    "GOLDEN_MIN_MULTI_SHARE": 0.5,
+    "GOLDEN_SPIKE_Z": 2.5,
+    "GOLDEN_MIN_SAVED_MIN": 8,
+    "GOLDEN_MAX_ROUTES": 15,
+    "GOLDEN_CAPTURE": 0.6,
+    "GOLDEN_BUS_KMH": 18,
+    "GOLDEN_DETOUR": 1.3,
+    "GOLDEN_AVG_WAIT_MIN": 6,
+    "GOLDEN_BUS_PLACES": 89,
+    "LEG_SPEED_KMH": {
+      "metro": 26,
+      "rail": 40,
+      "ferry": 18,
+      "carris": 12,
+      "cm": 16,
+      "other": 14
+    }
+  }
+}
